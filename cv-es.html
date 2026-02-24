@@ -11,7 +11,7 @@
             --secondary: #3d5a80;
             --accent: #ee6c4d;
             --light: #e0e7ef;
-            --white: #ffffff;
+            --white: #eeee;
             --text: #2d3748;
             --text-light: #718096;
             --shadow: 0 10px 40px rgba(0,0,0,0.1);
@@ -25,7 +25,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #1e3a5f 0%, #3d5a80 50%, #98c1d9 100%);
+            background: var(--white);
             min-height: 100vh;
             padding: 40px 20px;
             color: var(--text);
@@ -296,7 +296,7 @@
             background: var(--accent);
             transform: translateY(-3px);
         }
-
+/* 
         @media (max-width: 768px) {
             .cv-container {
                 grid-template-columns: 1fr;
@@ -313,7 +313,7 @@
             body {
                 padding: 20px 10px;
             }
-        }
+        } */
     </style>
 </head>
 <body>
@@ -330,34 +330,50 @@
             <div class="sidebar-section">
                 <h3 class="sidebar-title">Contacto</h3>
                 <div class="contact-item">
-                    <span class="contact-icon">📧</span>
+                    <span class="contact-icon">
+                        <img src="./img/correo.png" alt="">
+                    </span>
                     <span class="contact-text">
                         <a href="mailto:brian.yunuel.soto.sanchez@gmail.com">brian.yunuel.soto.sanchez
                             @gmail.com</a>
                     </span>
                 </div>
                 <div class="contact-item">
-                    <span class="contact-icon">📱</span>
-                    <span class="contact-text">+52 415 119 7406</span>
+                    <span class="contact-icon">
+                        <img src="./img/telefono-movil.png" alt="">
+                    </span>
+                    <span class="contact-text">
+                        <a href="https://wa.me/524151197406">
+                            +52 415 119 7406
+                        </a>
+                    </span>
                 </div>
                 <div class="contact-item">
-                    <span class="contact-icon">📍</span>
+                    <span class="contact-icon">
+                        <img src="./img/ubicacion.png" alt="">
+                    </span>
                     <span class="contact-text">Mexico, Guanajuato, San Miguel de Allende</span>
                 </div>
                 <div class="contact-item">
-                    <span class="contact-icon">🔗</span>
+                    <span class="contact-icon">
+                        <img src="./img/linkedin.png" alt="">
+                    </span>
                     <span class="contact-text">
                         <a href="https://www.linkedin.com/in/brian-yunuel-soto-sanchez-785362277/">Mi LinkedIn | Brian Soto</a>
                     </span>
                 </div>
                 <div class="contact-item">
-                    <span class="contact-icon">🔗</span>
+                    <span class="contact-icon">
+                        <img src="./img/lap.png" alt="">
+                    </span>
                     <span class="contact-text">
                         <a href="https://candidato.mx.computrabajo.com/candidate/home">Mi CompuTrabajo | Brian Soto</a>
                     </span>
                 </div>
                 <div class="contact-item">
-                    <span class="contact-icon">🔗</span>
+                    <span class="contact-icon">
+                        <img src="./img/github.png" alt="">
+                    </span>
                     <span class="contact-text">
                         <a href="https://github.com/Yunuel-Soto">Mi GitHub | Yunuel Soto</a>
                     </span>
@@ -429,26 +445,30 @@
         <main class="main-content">
             <section class="section">
                 <div class="section-header">
-                    <div class="section-icon">👤</div>
+                    <div class="section-icon">
+                        <img src="./img/usuario.png" alt="">
+                    </div>
                     <h2 class="section-title">Perfil</h2>
                 </div>
                 <div class="description">
                     Soy un entusiasta de la programación web, ingeniero en sistemas. 
-                    Me encanta aprender y mejorar en las tecnologias de la web, entre otras como la movil.
-                    Me comprometo siempre a aprender las mejores practicas y mejorar los procesos de 
-                    desarrollo para garantizar que las aplicaciones y paginas web que realice, sean duraderas
+                    Me encanta aprender y mejorar en las tecnologías de la web, entre otras como la móvil.
+                    Me comprometo siempre a aprender las mejores prácticas y mejorar los procesos de 
+                    desarrollo para garantizar que las aplicaciones y páginas web que realice, sean duraderas
                     a largo plazo con el menor mantenimiento posible.
                 </div>
             </section>
             <section class="section">
                 <div class="section-header">
-                    <div class="section-icon">💼</div>
+                    <div class="section-icon">
+                        <img src="./img/progreso.png" alt="">
+                    </div>
                     <h2 class="section-title">Experiencia Laboral</h2>
                 </div>
                 
                 <div class="experience-item">
                     <p class="exp-date">2024 Mayo - Trabajo actual</p>
-                    <h3 class="exp-company">Corporativo Logistico Veo</h3>
+                    <h3 class="exp-company">Corporativo Logístico Veo</h3>
                     <p class="exp-position">Sistemas</p>
                     <p class="exp-description">
                         <ul>
@@ -468,14 +488,14 @@
                             </li>
                             <li>
                                 Montar aplicaciones, rentar y llevar a cabo la supervisión de los 
-                                servidores externos, configuración SSL para la app y pagina web de la empresa.
+                                servidores externos, configuración SSL para la app y página web de la empresa.
                             </li>
                             <li>
                                 Mejora continua en las distintas áreas mediante módulos web y tecnología 
                                 complementaria como escáner y GPS, utilizando recursos como API REST.
                             </li>
                             <li>
-                                Desarrollar una aplicacion mobil para que los clientes puedan solicitar, 
+                                Desarrollar una aplicación móvil para que los clientes puedan solicitar, 
                                 dar seguimiento y confirmar su paquete dentro de un concolizado (servicio tipo amazon, pero 
                                 para empresas).
                             </li>
@@ -494,9 +514,9 @@
                                 convocatorias internas mediante el framework symfony.
                             </li>
                             <li>
-                                Participar y ganar el interawards (concurso entre los practicantes en donde 
-                                presentan sus proyectos dentro de la empresa, calificando el nivel de innovacion, 
-                                las viabilidad a largo plazo y la ponencia).
+                                Participar y ganar el InterAwards (concurso entre los practicantes en donde 
+                                presentan sus proyectos dentro de la empresa, calificando el nivel de innovación, 
+                                la viabilidad a largo plazo y la ponencia).
                             </li>
                             <li>
                                 Trabajar con un equipo de apoyo para llevar a cabo el proyecto 
@@ -551,11 +571,11 @@
                 <div class="experience-item">
                     <p class="exp-date">2017 - 2018</p>
                     <h3 class="exp-company">PGJEG</h3>
-                    <p class="exp-position">Practicante de sistemas informaticos</p>
+                    <p class="exp-position">Practicante de sistemas informáticos</p>
                     <p class="exp-description">
                         <ul>
                             <li>
-                                Mantenimiento de equipos de computo.
+                                Mantenimiento de equipos de cómputo.
                             </li>
                             <li>
                                 Inventario de productos entrantes, salientes y de almacenamiento.
@@ -567,16 +587,18 @@
                     </p>
                 </div>
             </section>
-
+            <br><br><br><br><br>
             <section class="section">
                 <div class="section-header">
-                    <div class="section-icon">🎓</div>
+                    <div class="section-icon">
+                        <img src="./img/birrete.png" alt="">
+                    </div>
                     <h2 class="section-title">Educación</h2>
                 </div>
                 
                 <div class="education-item">
-                    <h3 class="edu-degree">Ingenieria en sistemas computacionales</h3>
-                    <p class="edu-school">Universidad Politécnica de Queretaro</p>
+                    <h3 class="edu-degree">Ingeniería en sistemas computacionales</h3>
+                    <p class="edu-school">Universidad Politécnica de Querétaro</p>
                     <p class="edu-date">2020 - 2024</p>
                 </div>
 
@@ -589,12 +611,14 @@
 
             <section class="section">
                 <div class="section-header">
-                    <div class="section-icon">🏆</div>
+                    <div class="section-icon">
+                        <img src="./img/taza.png" alt="">
+                    </div>
                     <h2 class="section-title">Cursos</h2>
                 </div>
                 <div class="tags">
                     <span class="tag">Desarrollo web con NextJs</span>
-                    <span class="tag">Flutter - Movil: De cero a experto</span>
+                    <span class="tag">Flutter - Móvil: De cero a experto</span>
                     <span class="tag">Build and Deploy a Fully responsive Modern UI/UX Website in React JS</span>
                     <span class="tag">Curso esencial de Javascript y el DOM</span>
                     <span class="tag">Curso Definitivo de HTML y CSS</span>
