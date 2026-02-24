@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a5f;
+            --secondary: #3d5a80;
+            --accent: #ee6c4d;
+            --light: #e0e7ef;
+            --white: #ffffff;
+            --text: #2d3748;
+            --text-light: #718096;
+            --shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1e3a5f 0%, #3d5a80 50%, #98c1d9 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: var(--text);
+        }
+
+        .cv-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+        }
+
+        .sidebar {
+            background: var(--primary);
+            color: var(--white);
+            padding: 40px 30px;       
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--accent);
+            object-fit: cover;
+            margin-bottom: 20px;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: var(--primary);
+            overflow: hidden;
+            background-color: #ffff;
+        }
+
+        .profile-img img {
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+        }
+
+        .profile-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .profile-title {
+            font-size: 1rem;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        .sidebar-section {
+            margin-bottom: 30px;
+        }
+
+        .sidebar-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.7;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            align-items: center;
+        }  
+        
+        .contact-text a {
+            color: #ffff;            
+        }
+
+        .contact-icon {
+            min-width: 32px;
+            height: 32px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 14px;
+        }
+
+        .skill-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .skill-bar {
+            height: 6px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 3px;
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 18px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .experience-item {
+            padding-left: 20px;
+            border-left: 3px solid var(--light);
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 13px;
+            height: 13px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .exp-date {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .exp-company {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 3px;
+        }
+
+        .exp-position {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .exp-description {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        .education-item {
+            margin-bottom: 20px;
+        }
+
+        .edu-degree {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .edu-date {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: var(--light);
+            color: var(--secondary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--white);
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .cv-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                padding: 30px 20px;
+            }
+            
+            .main-content {
+                padding: 30px 20px;
+            }
+            
+            body {
+                padding: 20px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <aside class="sidebar">
+            <div class="profile-section">
+                <div class="profile-img">
+                    <img src="./img/Captura de pantalla 2026-02-23 155054.png" alt="">
+                </div>
+                <h1 class="profile-name">Brian Yunuel Soto Sanchez</h1>
+                <p class="profile-title">Ing. en sistemas computacionales</p>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Contacto</h3>
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <span class="contact-text">
+                        <a href="mailto:brian.yunuel.soto.sanchez@gmail.com">brian.yunuel.soto.sanchez
+                            @gmail.com</a>
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📱</span>
+                    <span class="contact-text">+52 415 119 7406</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <span class="contact-text">Mexico, Guanajuato, San Miguel de Allende</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🔗</span>
+                    <span class="contact-text">
+                        <a href="https://www.linkedin.com/in/brian-yunuel-soto-sanchez-785362277/">Mi LinkedIn | Brian Soto</a>
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🔗</span>
+                    <span class="contact-text">
+                        <a href="https://candidato.mx.computrabajo.com/candidate/home">Mi CompuTrabajo | Brian Soto</a>
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🔗</span>
+                    <span class="contact-text">
+                        <a href="https://github.com/Yunuel-Soto">Mi GitHub | Yunuel Soto</a>
+                    </span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Habilidades</h3>
+                <div class="skill-item">
+                    <div class="skill-name"><span>HTML/CSS</span><span>95%</span></div>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 95%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>JavaScript</span><span>85%</span></div>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>React</span><span>80%</span></div>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Node.js</span><span>75%</span></div>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 75%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Laravel</span><span>90%</span></div>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>PHP</span><span>95%</span></div>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 95%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Mysql</span><span>75%</span></div>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 95%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Mongo DB</span><span>50%</span></div>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 50%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>NextJs</span><span>80%</span></div>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Flutter</span><span>70%</span></div>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 70%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Bases de datos Linux</span><span>60%</span></div>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 60%"></div></div>
+                </div>
+                
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Idiomas</h3>
+                <div class="language-item">
+                    <span>Español</span>
+                    <span>Nativo</span>
+                </div>
+                <div class="language-item">
+                    <span>Inglés</span>
+                    <span>B2</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-icon">👤</div>
+                    <h2 class="section-title">Perfil</h2>
+                </div>
+                <div class="description">
+                    Soy un entusiasta de la programación web, ingeniero en sistemas. 
+                    Me encanta aprender y mejorar en las tecnologias de la web, entre otras como la movil.
+                    Me comprometo siempre a aprender las mejores practicas y mejorar los procesos de 
+                    desarrollo para garantizar que las aplicaciones y paginas web que realice, sean duraderas
+                    a largo plazo con el menor mantenimiento posible.
+                </div>
+            </section>
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-icon">💼</div>
+                    <h2 class="section-title">Experiencia Laboral</h2>
+                </div>
+                
+                <div class="experience-item">
+                    <p class="exp-date">2024 Mayo - Trabajo actual</p>
+                    <h3 class="exp-company">Corporativo Logistico Veo</h3>
+                    <p class="exp-position">Sistemas</p>
+                    <p class="exp-description">
+                        <ul>
+                            <li>
+                                Desarrollar un sistema para automatizar procesos existentes y crear 
+                                nuevos procesos para la administración y seguimiento de la empresa 
+                                en las áreas de Monitoreo, Taller, Administración, Vigilancia y 
+                                Almacén de la empresa.
+                            </li>
+                            <li>
+                                Llevar a cabo los procesos del área de IT 
+                                (soporte y mantenimiento de equipos de cómputo, manutención del servidor 
+                                interno, supervisión de la red, compra y entrega de equipos, etc).
+                            </li>
+                            <li>
+                                Desarrollar una página web de la empresa, mejorando la anterior.
+                            </li>
+                            <li>
+                                Montar aplicaciones, rentar y llevar a cabo la supervisión de los 
+                                servidores externos, configuración SSL para la app y pagina web de la empresa.
+                            </li>
+                            <li>
+                                Mejora continua en las distintas áreas mediante módulos web y tecnología 
+                                complementaria como escáner y GPS, utilizando recursos como API REST.
+                            </li>
+                            <li>
+                                Desarrollar una aplicacion mobil para que los clientes puedan solicitar, 
+                                dar seguimiento y confirmar su paquete dentro de un concolizado (servicio tipo amazon, pero 
+                                para empresas).
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+
+                <div class="experience-item">
+                    <p class="exp-date">2023 Agosto - 2024 Mayo</p>
+                    <h3 class="exp-company">HARMAN</h3>
+                    <p class="exp-position">Desarrollador Web</p>
+                    <p class="exp-description">
+                        <ul>
+                            <li>
+                                Desarrollar una aplicación para la automatización de las 
+                                convocatorias internas mediante el framework symfony.
+                            </li>
+                            <li>
+                                Participar y ganar el interawards (concurso entre los practicantes en donde 
+                                presentan sus proyectos dentro de la empresa, calificando el nivel de innovacion, 
+                                las viabilidad a largo plazo y la ponencia).
+                            </li>
+                            <li>
+                                Trabajar con un equipo de apoyo para llevar a cabo el proyecto 
+                                de automatización, siguiendo estándares y buenas prácticas.
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+
+                <div class="experience-item">
+                    <p class="exp-date">2022 Junio - 2022 Diciembre</p>
+                    <h3 class="exp-company">OCC Mundial</h3>
+                    <p class="exp-position">Desarrollador Backend</p>
+                    <p class="exp-description">
+                        <ul>
+                            <li>
+                                Desarrollo de una api para bajas automáticas.
+                            </li>
+                            <li>
+                                Prueba de solicitudes http con Postman.
+                            </li>
+                            <li>
+                                Dockerización de la api de baja de usuarios 
+                                integrada en OCC MUNDIAL.
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+
+                <div class="experience-item">
+                    <p class="exp-date">2022 Junio - 2022 Diciembre</p>
+                    <h3 class="exp-company">Huawei</h3>
+                    <p class="exp-position">Site design</p>
+                    <p class="exp-description">
+                        <ul>
+                            <li>
+                                Diseño de planos de áreas o sitios de instalación.
+                            </li>
+                            <li>
+                                Propuestas para la instalación de equipos 5g.
+                            </li>
+                            <li>
+                                Revisión y corrección de concordancia de fotos de área con planos previo a la propuesta.
+                            </li>
+                            <li>
+                                Elaboración de informes de propuestos.
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+
+                <div class="experience-item">
+                    <p class="exp-date">2017 - 2018</p>
+                    <h3 class="exp-company">PGJEG</h3>
+                    <p class="exp-position">Practicante de sistemas informaticos</p>
+                    <p class="exp-description">
+                        <ul>
+                            <li>
+                                Mantenimiento de equipos de computo.
+                            </li>
+                            <li>
+                                Inventario de productos entrantes, salientes y de almacenamiento.
+                            </li>
+                            <li>
+                                Instalación de herramientas de mantenimiento de software.
+                            </li>                            
+                        </ul>
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-icon">🎓</div>
+                    <h2 class="section-title">Educación</h2>
+                </div>
+                
+                <div class="education-item">
+                    <h3 class="edu-degree">Ingenieria en sistemas computacionales</h3>
+                    <p class="edu-school">Universidad Politécnica de Queretaro</p>
+                    <p class="edu-date">2020 - 2024</p>
+                </div>
+
+                <div class="education-item">
+                    <h3 class="edu-degree">Técnico de Soporte y Mantenimiento de Equipos de Cómputo</h3>
+                    <p class="edu-school">CBTIS 60</p>
+                    <p class="edu-date">2015 - 2018</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-icon">🏆</div>
+                    <h2 class="section-title">Cursos</h2>
+                </div>
+                <div class="tags">
+                    <span class="tag">Desarrollo web con NextJs</span>
+                    <span class="tag">Flutter - Movil: De cero a experto</span>
+                    <span class="tag">Build and Deploy a Fully responsive Modern UI/UX Website in React JS</span>
+                    <span class="tag">Curso esencial de Javascript y el DOM</span>
+                    <span class="tag">Curso Definitivo de HTML y CSS</span>
+                    <span class="tag">Curso de Manejo de Datos en PHP</span>
+                    <span class="tag">Curso de PHP con Composer</span>
+                    <span class="tag">Html and CSS with Jonas</span>
+                    <span class="tag">Curso de Gestión Efectiva del Tiempo</span>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
