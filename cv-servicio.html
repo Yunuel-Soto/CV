@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV-Brian_Yunuel_Soto_Sanchez-EN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a5f;
+            --secondary: #3d5a80;
+            --accent: #ee6c4d;
+            --light: #e0e7ef;
+            --white: #eeee;
+            --text: #2d3748;
+            --text-light: #718096;
+            --shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--white);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: var(--text);
+        }
+
+        .cv-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+        }
+
+        .sidebar {
+            background: var(--primary);
+            color: var(--white);
+            padding: 40px 30px;       
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--accent);
+            object-fit: cover;
+            margin-bottom: 20px;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: var(--primary);
+            overflow: hidden;
+            background-color: #ffff;
+        }
+
+        .profile-img img {
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+        }
+
+        .profile-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .profile-title {
+            font-size: 1rem;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        .sidebar-section {
+            margin-bottom: 30px;
+        }
+
+        .sidebar-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.7;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            align-items: center;
+        }  
+        
+        .contact-text a {
+            color: #ffff;            
+        }
+
+        .contact-icon {
+            min-width: 32px;
+            height: 32px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 14px;
+        }
+
+        .skill-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .skill-bar {
+            height: 6px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 3px;
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 18px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .experience-item {
+            padding-left: 20px;
+            border-left: 3px solid var(--light);
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 13px;
+            height: 13px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .exp-date {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .exp-company {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 3px;
+        }
+
+        .exp-position {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .exp-description {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        .education-item {
+            margin-bottom: 20px;
+        }
+
+        .edu-degree {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .edu-date {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: var(--light);
+            color: var(--secondary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--white);
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+/* 
+        @media (max-width: 768px) {
+            .cv-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                padding: 30px 20px;
+            }
+            
+            .main-content {
+                padding: 30px 20px;
+            }
+            
+            body {
+                padding: 20px 10px;
+            }
+        } */
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <aside class="sidebar">
+            <div class="profile-section">
+                <div class="profile-img">
+                    <img src="./img/Captura de pantalla 2026-02-23 155054.png" alt="">
+                </div>
+                <h1 class="profile-name">Brian Yunuel Soto Sanchez</h1>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Contacto</h3>
+                <div class="contact-item">
+                    <span class="contact-icon">
+                        <img src="./img/correo.png" alt="">
+                    </span>
+                    <span class="contact-text">
+                        <a href="mailto:brian.yunuel.soto.sanchez@gmail.com">brian.yunuel.soto.sanchez
+                            @gmail.com</a>
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">
+                        <img src="./img/telefono-movil.png" alt="">
+                    </span>
+                    <span class="contact-text">
+                        <a href="https://wa.me/524151197406">
+                            +52 415 119 7406
+                        </a>
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">
+                        <img src="./img/ubicacion.png" alt="">
+                    </span>
+                    <span class="contact-text">Mexico, Guanajuato, San Miguel de Allende</span>
+                </div>                
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Habilidades blandas</h3>                
+                <div class="skill-item">
+                    <div class="skill-name"><span>Habilidad con los equipos de computo</span></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Disposicion positiva</span></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Escucha activa</span></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Trabajo en equipo</span></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Caracter tranquilo</span></div>
+                </div>
+            </div>            
+        </aside>
+
+        <main class="main-content">            
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <img src="./img/progreso.png" alt="">
+                    </div>
+                    <h2 class="section-title">Experiencia en el servicio</h2>
+                </div>
+                
+                <div class="experience-item">
+                    <p class="exp-date">2022 Marzo - 2022 Julio</p>
+                    <h3 class="exp-company">Viñedo San Lucas</h3>
+                    <p class="exp-position">Ayudante de Barman</p>
+                    <p class="exp-description">
+                        <ul>
+                            <li>
+                                Lavar cristaleria.
+                            </li>                
+                            <li>
+                                Preparar diversas bebidas con y sin alcohol.
+                            </li>            
+                            <li>
+                                Preparar diferentes bebidas calientes.
+                            </li>                            
+                        </ul>
+                    </p>
+                </div>
+                <div class="experience-item">
+                    <p class="exp-date">2020 Agosto - 2021 Mayo</p>
+                    <h3 class="exp-company">Valetparkin</h3>
+                    <p class="exp-position">Staff general</p>
+                    <p class="exp-description">
+                        <ul>
+                            <li>
+                                Atender a los clientes y tratar inconvenientes.
+                            </li>                
+                            <li>
+                                Estacionar los carros de los clientes
+                            </li>                                                                   
+                        </ul>
+                    </p>
+                </div> 
+                <div class="experience-item">
+                    <p class="exp-date">2018 Mayo - 2018 Agosto</p>
+                    <h3 class="exp-company">Cinemex</h3>
+                    <p class="exp-position">Staff general</p>
+                    <p class="exp-description">
+                        <ul>
+                            <li>
+                                Limpiar salas y pasillos.
+                            </li>                
+                            <li>
+                                Dar entrada a los clientes.
+                            </li>            
+                            <li>
+                                Revisar los proyectores de las salas.
+                            </li>                            
+                        </ul>
+                    </p>
+                </div>      
+                <div class="experience-item">
+                    <p class="exp-date">2016 Agosto - 2016 Noviembre</p>
+                    <h3 class="exp-company">Los milagros</h3>
+                    <p class="exp-position">Ayudante de Barman y garrote</p>
+                    <p class="exp-description">
+                        <ul>
+                            <li>
+                                Apoyar a los meseros con las guarnisiones, limpieza y platillos.
+                            </li>                
+                            <li>
+                                Apoyar a los barman a preparar bebidas basicas, lavar cristaleria, limpiar la barra.
+                            </li>            
+                            <li>
+                                Trato directo con los clientes.
+                            </li>                            
+                        </ul>
+                    </p>
+                </div>                               
+            </section>
+            <br>
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <img src="./img/birrete.png" alt="">
+                    </div>
+                    <h2 class="section-title">Educación</h2>
+                </div>
+                
+                <div class="education-item">
+                    <h3 class="edu-degree">Ing en sistemas computacionales</h3>
+                    <p class="edu-school">Universidad Politécnica de Querétaro</p>
+                    <p class="edu-date">2020 - 2024</p>
+                </div>
+
+                <div class="education-item">
+                    <h3 class="edu-degree">Tecnico en soporte y mantenimiento de equipos de computo</h3>
+                    <p class="edu-school">CBTIS 60</p>
+                    <p class="edu-date">2015 - 2018</p>
+                </div>
+            </section>            
+        </main>
+    </div>
+</body>
+</html>
